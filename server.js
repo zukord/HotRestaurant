@@ -14,7 +14,15 @@ app.use(express.json());
 
 // Star Wars Characters (DATA)
 // =============================================================
-var reservations = [{}];
+var reservations = [
+  {
+    customerName: "James",
+    customerEmail: "tagorda@gmail.com",
+    customerID: "100",
+    customerTelephone: "320-555-6700",
+    numberOfParty: "8",
+    specialRequest: "highTable"
+  }];
 
 // Routes
 // =============================================================
@@ -27,6 +35,10 @@ app.get("/", function(req, res) {
 app.get("/reserve", function(req, res) {
   res.sendFile(path.join(__dirname, "reserve.html"));
 });
+
+app.get("/table", function(req, res) {
+    res.sendFile(path.join(__dirname, "table.html"));
+  });
 
 // Displays all characters
 app.get("/api/reservations", function(req, res) {
