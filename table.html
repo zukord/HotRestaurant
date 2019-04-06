@@ -52,9 +52,23 @@
           listGroupItem.append($("<h3>").text("Force Points: " + data[i].number));
           listGroupItem.append($("<h3>").text("Age: " + data[i].request));
 
-          $("#character-section").append(listGroupItem);
+          $("#reservations-section").append(listGroupItem);
         }
       });
+
+      function runTableQuery() {
+        var herokuURL = window.location.href;    
+        $.ajax({
+            url: herokuURL + "/api/reservations",
+            method: "GET"
+            })
+        .done({
+
+
+        })
+
+      }
+      
     </script>
 
 </body>
